@@ -13,3 +13,12 @@ export interface CartItem {
   pizza: Pizza;
   quantity: number;
 }
+
+// Pedido registrado en el sistema
+export interface Order {
+  id: string;
+  items: CartItem[];
+  total: number;
+  date: string;
+  status: "pending" | "completed" | "cancelled";
+}

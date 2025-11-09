@@ -45,6 +45,18 @@ const Cart = ({
 
     message += `*Total: $${total.toFixed(2)}*`;
 
+    // Guardar el pedido en localStorage
+    const order = {
+      id: `ORDER-${Date.now()}`,
+      items: cartItems,
+      total,
+      date: new Date().toISOString(),
+      status: "pending" as const,
+    };
+
+    const existingOrders = JSON.parse(localStorage.getItem("orders") || "[]");
+    localStorage.setItem("orders", JSON.stringify([...existingOrders, order]));
+
     // Codificar el mensaje para URL
     const encodedMessage = encodeURIComponent(message);
     
@@ -54,7 +66,7 @@ const Cart = ({
       "_blank"
     );
     
-    toast.success("Redirigiendo a WhatsApp...");
+    toast.success("Pedido registrado y redirigiendo a WhatsApp...");
   };
 
   return (
