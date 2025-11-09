@@ -50,7 +50,7 @@ const Cart = ({
     
     // Abrir WhatsApp con el mensaje
     window.open(
-      `https://wa.me/+54 9 11 2846-1327?text=${encodedMessage}`,
+      `https://wa.me/+5491128461327?text=${encodedMessage}`,
       "_blank"
     );
     
