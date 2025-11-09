@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Pizzería color palette - warm Mediterranean theme */
+    --background: 40 30% 97%;
+    --foreground: 25 40% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 25 40% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 25 40% 20%;
+
+    /* Primary: vibrant tomato red */
+    --primary: 8 85% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: warm golden yellow */
+    --secondary: 42 95% 65%;
+    --secondary-foreground: 25 40% 20%;
+
+    /* Muted: soft cream */
+    --muted: 40 25% 92%;
+    --muted-foreground: 25 20% 45%;
+
+    /* Accent: burnt orange */
+    --accent: 25 90% 58%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 40 20% 88%;
+    --input: 40 20% 88%;
+    --ring: 8 85% 55%;
+
+    --radius: 0.75rem;
+
+    /* Custom design tokens */
+    --pizza-hero: 8 85% 55%;
+    --pizza-crust: 35 65% 75%;
+    --pizza-cheese: 42 95% 75%;
+    
+    /* Gradients */
+    --gradient-warm: linear-gradient(135deg, hsl(8 85% 55%), hsl(25 90% 58%));
+    --gradient-hero: linear-gradient(180deg, hsl(40 30% 97%), hsl(40 25% 92%));
+    
+    /* Shadows */
+    --shadow-card: 0 4px 20px hsla(25 40% 20% / 0.08);
+    --shadow-hover: 0 8px 30px hsla(8 85% 55% / 0.2);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 25 30% 12%;
+    --foreground: 40 30% 95%;
+
+    --card: 25 25% 16%;
+    --card-foreground: 40 30% 95%;
+
+    --popover: 25 25% 16%;
+    --popover-foreground: 40 30% 95%;
+
+    --primary: 8 85% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 42 85% 55%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 25 20% 22%;
+    --muted-foreground: 40 15% 60%;
+
+    --accent: 25 90% 58%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 25 20% 25%;
+    --input: 25 20% 25%;
+    --ring: 8 85% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
